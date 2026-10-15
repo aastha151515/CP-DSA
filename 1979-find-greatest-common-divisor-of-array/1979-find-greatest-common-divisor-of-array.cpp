@@ -8,15 +8,12 @@ public:
             l=max(l,nums[i]);
             s=min(s,nums[i]);
         }
-        int ans=1;
-        for(int i=1;i<=l;i++)
+        while(s)
         {
-            if(l%i==0 && s%i==0)
-            {
-                ans=max(ans,i);
-            }
+            l%=s;
+            swap(l,s);
         }
-        return ans;
+        return l;
     }
 };
 
